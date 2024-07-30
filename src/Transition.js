@@ -7,7 +7,7 @@ export default class Transition {
 	}
 
 	/**
-	 * @param {{ from: HTMLElement|Element, trigger: string|HTMLElement|false }} props
+	 * @param {{ from: HTMLElement|Element, trigger: string|HTMLElement|false, toURL: string }} props
 	 * @return {Promise<void>}
 	 */
 	leave(props) {
@@ -17,7 +17,7 @@ export default class Transition {
 	}
 
 	/**
-	 * @param {{ to: HTMLElement|Element, trigger: string|HTMLElement|false }} props
+	 * @param {{ to: HTMLElement|Element, trigger: string|HTMLElement|false, toURL: string }} props
 	 * @return {Promise<void>}
 	 */
 	enter(props) {
