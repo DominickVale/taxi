@@ -1,5 +1,5 @@
 {
-	"name": "@unseenco/taxi",
+	"name": "@dominickvale/taxi",
 	"description": "A modern page transition library which supports routing, preloading, and additional script reloading.",
 	"version": "1.6.1",
 	"license": "GPL-3.0-or-later",
@@ -10,10 +10,10 @@
 		"source": "src/taxi.js",
 		"main": "dist/taxi.js"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/craftedbygc/taxi.git"
-	},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DominickVale/taxi.git"
+  },
 	"bugs": {
 		"url": "https://github.com/craftedbygc/taxi/issues"
 	},
