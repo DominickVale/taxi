@@ -56,13 +56,14 @@ export default class Renderer {
 	 * Called when transitioning into the current page.
 	 * @param {Transition} transition
 	 * @param {string|HTMLElement|false} trigger
+	 * @param {string} toURL
 	 * @return {Promise<null>}
 	 */
-	enter(transition, trigger) {
+	enter(transition, trigger, toURL) {
 		return new Promise((resolve) => {
 			this.onEnter()
 
-			transition.enter({ trigger, to: this.content })
+			transition.enter({ trigger, to: this.content, toURL })
 				.then(() => {
 					this.onEnterCompleted()
 					resolve()
@@ -75,13 +76,14 @@ export default class Renderer {
 	 * @param {Transition} transition
 	 * @param {string|HTMLElement|false} trigger
 	 * @param {boolean} removeOldContent
+	 * @param {string} toURL
 	 * @return {Promise<null>}
 	 */
-	leave(transition, trigger, removeOldContent) {
+	leave(transition, trigger, removeOldContent, toURL) {
 		return new Promise((resolve) => {
 			this.onLeave()
 
-			transition.leave({ trigger, from: this.content })
+			transition.leave({ trigger, from: this.content, toURL })
 				.then(() => {
 					if (removeOldContent) {
 						this.remove()

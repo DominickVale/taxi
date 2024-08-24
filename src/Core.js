@@ -268,7 +268,7 @@ export default class Core {
 		})
 
 		return new Promise((resolve) => {
-			this.currentCacheEntry.renderer.leave(TransitionClass, trigger, this.removeOldContent)
+			this.currentCacheEntry.renderer.leave(TransitionClass, trigger, this.removeOldContent, url.raw)
 				.then(() => {
 					if (trigger !== 'popstate') {
 						window.history.pushState({}, '', url.raw)
@@ -313,7 +313,7 @@ export default class Core {
 				window.history.replaceState({}, '', entry.finalUrl)
 			}
 
-			entry.renderer.enter(TransitionClass, trigger)
+			entry.renderer.enter(TransitionClass, trigger, entry.finalUrl)
 				.then(() => {
 					E.emit('NAVIGATE_END', {
 						from: this.currentCacheEntry,
