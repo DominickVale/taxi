@@ -18,7 +18,7 @@ export default class RouteStore {
 	add(fromPattern, toPattern, transition) {
 		if (!this.data.has(fromPattern)) {
 			this.data.set(fromPattern, new Map())
-			this.regexCache.set(fromPattern, new RegExp(`^${fromPattern}$`))
+      this.regexCache.set(fromPattern, new RegExp(`^${fromPattern}/?$`))
 		}
 
 		this.data.get(fromPattern).set(toPattern, transition)
